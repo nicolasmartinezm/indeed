@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Indeed</title>
+  </head>
+  <body>
+    <header>
+      <!-- MAIN NAVIGATION AREA -->
+      <nav>
+        <div class="navOptions">
+          <img
+            id="logo"
+            src="icons/logo.png"
+            alt="Indeed logo"
+            width="100%"
+            height="100%"
+          />
+
+          <a href="#" class="responsiveLink">Find Jobs</a>
+          <a href="#" class="responsiveLink">Company reviews</a>
+          <a href="#" class="responsiveLink">Salary guide</a>
+        </div>
+        <div class="navRightSide">
+          <div class="navIcons">
+            <a href="#"><img src="icons/chat-black.png" /></a>
+            <a href="#"><img src="icons/notificacion.png" /></a>
+            <a href="#"><img src="icons/user.png" /></a>
+          </div>
+          <div class="navLang">
+            <a href="#">En</a>
+            <a href="#" id="activeLang">Fr</a>
+          </div>
+          <div class="employer">
+            <a href="#">Employers / Post Job</a>
+          </div>
+          <div class="burgerMenu">
+            <a href="#"><img src="icons/menu.png" /></a>
+          </div>
+        </div>
+      </nav>
+      <!-- MAIN SEARCH INPUT BARS -->
+      <section class="searchInputs">
+        <div class="inputs">
+          <div class="whatInputBar">
+            <label for="what">What</label>
+            <input
+              type="text"
+              id="what"
+              name="what"
+              placeholder="Job title, keywords, or company"
+            />
+            <img src="icons/search-grey.png" />
+          </div>
+          <div class="whereInputBar">
+            <label for="where">Where</label>
+            <input
+              type="text"
+              id="where"
+              name="where"
+              placeholder="City, province, or 'remote' "
+            />
+            <img src="icons/location.png" />
+          </div>
+          <button type="button" class="findJobs">Find jobs</button>
+          <span>Advanced Job Search</span>
+        </div>
+
+        <!-- SEARCH FILTER BUTTONS -->
+        <div class="searchFilters">
+          <div>
+            <button type="button" id="datePosted">
+              Date posted
+              <img src="icons/arrow-down.png" />
+            </button>
+            <div class="datePostedList options">
+              <a href="#">Last 24 hours</a>
+              <a href="#">Last 3 days</a>
+              <a href="#">Last 7 days</a>
+              <a href="#">Last 14 days</a>
+              <a href="#">Since your last visit</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" id="remote">
+              Remote
+              <img src="icons/arrow-down.png" />
+            </button>
+            <div class="remoteList options">
+              <a href="#">Remote (1)</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" id="kilometres">
+              within 25 kilometres
+              <img src="icons/arrow-down.png" />
+            </button>
+            <div class="kilometresList options">
+              <a href="#">Exact location only</a>
+              <a href="#">Within 5 kilometres</a>
+              <a href="#">Within 10 kilometres</a>
+              <a href="#">Within 15 kilometres</a>
+              <a href="#">Within 20 kilometres</a>
+              <a href="#">Within 25 kilometres</a>
+              <a href="#">Within 50 kilometres</a>
+              <a href="#">Within 100 kilometres</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" id="salaryEstimate">
+              Salary estimate
+              <img src="icons/arrow-down.png" />
+            </button>
+            <div class="salaryEstimateList options">
+              <a href="#">20.00+/hour (6)</a>
+              <a href="#">30.00+/hour (4)</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" id="jobType">
+              Job type
+              <img src="icons/arrow-down.png" />
+            </button>
+            <div class="jobTypeList options">
+              <a href="#">Contract (3)</a>
+              <a href="#">Full-Time (3)</a>
+              <a href="#">Apprenticeship (2)</a>
+              <a href="#">Internship (5)</a>
+              <a href="#">Permanent (1)</a>
+              <a href="#">Part-Time (4)</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" id="occupation">
+              Occupation
+              <img src="icons/arrow-down.png" />
+            </button>
+            <div class="occupationList options">
+              <a href="#">Technology Occupations (8)</a>
+              <a href="#">Media, Arts & Design Occupations (1)</a>
+              <a href="#">Sales, Retail & Costumer Support Occupations (1)</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" id="industry">
+              Industry
+              <img src="icons/arrow-down.png" />
+            </button>
+            <div class="industryList options">
+              <a href="#">Finance (2)</a>
+              <a href="#">Manufacturing (1)</a>
+              <a href="#">Information Techonology (2)</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" id="location">
+              Location
+              <img src="icons/arrow-down.png" />
+            </button>
+            <div class="locationList options">
+              <a href="#">Vancouver, BC (7)</a>
+            </div>
+          </div>
+          <div>
+            <button type="button" id="jobLanguage">
+              Job Language
+              <img src="icons/arrow-down.png" />
+            </button>
+            <div class="jobLanguageList options">
+              <a href="#">English (8)</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- END OF FILTER BUTTONS -->
+    </header>
+    <div class="separator"></div>
+    <!-- MAIN SEARCH RESULTS -->
+    <main>
+      <section class="searchResults">
+        <div id="leftSide">
+          <!-- DESCRIPTION OF THE ACTUAL SEARCH -->
+          <div>
+            <span id="webResult"
+              >Co-op Web Developer jobs in Vancouver, BC</span
+            >
+          </div>
+          <div class="sortBy">
+            <p>Sort by: <b>relevance</b> - <span>date</span></p>
+            <span class="pages"
+              >Page 1 of 4 jobs <img src="icons/questions.png"
+            /></span>
+          </div>
+          <!-- SEARCH RESULTS -->
+          <div class="results">
+            <!-- 1ST SEARCH RESULT -->
+            <div
+              class="searchResult selected"
+              data-jobtitle="Web Developer Intern"
+              data-company="Tian'en Consulting Group LTD."
+              data-joblocation="Vancouver, BC"
+              data-jobwage="$18 an hour - Full-time, Part-time, Permanent"
+              data-jobdescription="
+              
+          <b>About Us</b>
+            <br> <br>
+          Providing professional immigration services since 1997, Tianen Consulting Group Ltd. is headquartered in Vancouver, BC. Backed by decades of combined experience among our team including experienced consultants, former visa officers and certified accountants, we take a collaborative approach to formulate effective strategies to help clients achieve their immigration goals. Tianen is recognized as one of the top companies for our efficient, and results-oriented services. We are looking for a Junior web developer to help optimize the performance of our websites for different projects.
+          <br><br>
+          <b>Duties and Responsibilities:</b>
+          <br><br>
+          Knowledge in HTML5, CSS3, JavaScript/TypeScript, VueJS and NodeJS<br>
+          Experience working with WordPress programming<br>
+          Manage and optimize website performance<br>
+          Develop quality websites and website theme templates<br>
+          Coordinate with project managers to meet website projects deadlines
+          <br> <br>
+          <b>Qualifications:</b>
+          <br><br>
+          1 - 2 years experience with JavaScript, VueJS, NodeJS and HTML.<br>
+          1 - 2 years of experience building websites.<br>
+          Strong knowledge of CSS/SCSS.<br>
+          Basic knowledge of SEO best practices.<br>
+          Familiarity working with content management systems, such as Drupal or WordPress.<br>
+          Fluent in Chinese and English.<br>
+          Legally entitled to work in Canada.<br>
+          B.Sc. degree in Computer Science or related technical field.<br>
+          Recent graduate or intern are welcome to apply.
+          <br><br>
+          
+          <b>Job Types:</b>
+          <br>
+          <br>
+           Full-time, Part-time, Permanent<br>
+          Part-time hours: 20 per week<br>
+          <br>
+          Salary: From $18.00 per hour
+          <br> <br>
+          <b>Benefits:</b>
+          <br><br>
+          Casual dress<br>
+          Work from home
+          <br>
+          <br>
+          <b>Schedule:</b>
+          <br><br>
+          Day shift
+          <br><br>
+          <b>Experience:</b>
+          <br><br>
+          WordPress Programming: 1 year (required).<br>
+          <br><br>
+          <b>Language:</b>
+          <br><br>
+          Chinese (preferred)."
+            >
+              <!-- HEADER -->
+              <div class="jobHeader">
+                <div>
+                  <span class="newJobPosition">new</span>
+                  <h2 class="jobTitle">Web Developer Intern</h2>
+                  <p class="companyName">Tian'en Consulting Group LTD.</p>
+                  <p class="jobLocation">Vancouver, BC</p>
+                </div>
+                <div>
+                  <a href="#"><img src="icons/dots.png" /></a>
+                </div>
+              </div>
+              <!-- END OF HEADER -->
+              <!-- HOURLY WAGE -->
+              <div class="jobWage"><p>$18 an hour</p></div>
+              <!-- JOB FACTS -->
+              <div class="jobFacts">
+                <p class="easilyApply">
+                  <img src="icons/send-button.png" />Easily apply to this job
+                </p>
+                <p class="easilyApply">
+                  <img src="icons/flash.png" />Responsive employer
+                </p>
+                <p class="easilyApply">
+                  <img src="icons/reloj.png" />Urgently hiring
+                </p>
+              </div>
+              <!-- END OF FACTS -->
+              <!-- JOB DESCRIPTION -->
+              <div class="jobDescription">
+                <ul>
+                  <li>
+                    Recent graduate or <b>intern</b> are welcome to apply.
+                  </li>
+                  <li>
+                    Knowledge in HTML5, CSS3 JavaScript / TypeScript, VueJS and
+                    NodeJs
+                  </li>
+                  <li>Manage and optimize website performance...</li>
+                </ul>
+              </div>
+              <!-- END OF JOB DESCRIPTION -->
+              <div class="visitedMinutes">
+                <p>Visited 45 minutes ago</p>
+              </div>
+            </div>
+            <!-- END OF 1ST SEARCH RESULT -->
+            <!-- 2ND SEARCH RESULT -->
+            <div
+              class="searchResult"
+              data-jobtitle="Software Developer (Front End) Intern"
+              data-company="FISPAN"
+              data-joblocation="Vancouver, BC"
+              data-jobwage="$22 an hour - Full-time, Permanent"
+              data-jobdescription="
+              <b>Our Business</b>
+                <br> <br>
+                FISPAN is an Enterprise SaaS FinTech start-up that allows for banks to deploy embedded financial products and services to create a seamless banking connection for their corporate clients. Our product aims to provide instant scale and reach for banks who want to remove friction and add value by enabling their commercial banking clients to access banking services through their preferred operational software. Founded in 2016 by respected and renowned entrepreneur Lisa Shields, FISPAN is on a mission to create the best product in the FinTech industry, and fundamentally change the way that companies bank. Being the market leader in ERP-banking, we work with the world’s Tier 1 banks with assets exceeding up to $3T, including J.P. Morgan Chase.
+              <br><br>
+              With our rapid growth and global expansion, we are looking for dynamic and passionate individuals to join our team and inclusive culture. FISPAN recognizes that the differences in each of us is what makes FISPAN a different kind of business. Being a Vancouver based start-up, our modern and scenic office is located in downtown’s historic Marine Building. The interview process for this position will be entirely remote, and we are open to remote work options.
+              <br><br>
+              Please send us some examples of your work and show off your coding style.
+              <br><br><br>
+              <b>How your day at work would look like</b>
+              <br><br>
+              <ul>
+              <li>Knowledge in HTML5, CSS3, JavaScript/TypeScript, VueJS and NodeJS</li><br>
+              <li>Experience working with WordPress programming</li><br>
+                <li>Manage and optimize website performance</li><br>
+                  <li>Develop quality websites and website theme templates</li><br>
+                    <li>Coordinate with project managers to meet website projects deadlines</li></ul>
+              <br> <br>
+              <p><b>Diversity, Equity & Inclusion</b>
+              <br><br>
+              As FISPAN continues to grow, we are committed to celebrating diversity, endorsing equity, and encouraging inclusion. This starts in the recruitment process. All job postings are first evaluated in a gender-decoding platform to ensure fair candidate pools. Human Resources and hiring managers also engage in blind-hiring and resume review practices to ensure we are being objective and mitigating any potential biases.
+                <br><br>
+                FISPAN underrepresented groups stand at over 50% with an equal gender balance in our upper manager team, as well. By joining our co-op team, expect to work with diverse perspectives, as 80% of our co-ops belong to underrepresented groups, and come from different post-secondaries. We aim to make FISPAN the best place to start, explore, and grow a career for everyone.<br>
+              Fluent in Chinese and English.<br>
+              Legally entitled to work in Canada.<br>
+              B.Sc. degree in Computer Science or related technical field.<br>
+              Recent graduate or intern are welcome to apply.
+              <br><br>
+              <b>How your day at work would look like</b>
+              <br><br>
+              <ul>
+              <li>Education: pursuing a degree in Computer Science, Engineering, Mathematics or related.</li><br>
+              <li>Must have experience with JavaScript frameworks (React, Express, Node.js) </li><br>
+                <li>Must have experience with relational Databases (No-SQL is a plus) and the ability to write SQL queries. </li><br>
+                  <li>Be familiar with source control and build systems: git, npm. </li><br>
+                    <li>Experience with AWS or any other cloud providers is a plus. </li></ul>
+                    <br><br>
+              </p>"
+            >
+              <!-- HEADER -->
+              <div class="jobHeader">
+                <div>
+                  <h2 class="jobTitle">
+                    Software Developer (Front End) Intern
+                  </h2>
+                  <p class="companyName">FISPAN</p>
+                  <p class="jobLocation">Vancouver, BC</p>
+                </div>
+                <div>
+                  <a href="#"><img src="icons/dots.png" /></a>
+                </div>
+              </div>
+              <!-- END OF HEADER -->
+              <!-- HOURLY WAGE -->
+              <div class="jobWage"><p>$22 an hour</p></div>
+              <!-- JOB FACTS -->
+              <div class="jobFacts">
+                <p class="easilyApply">
+                  <img src="icons/send-button.png" />Easily apply to this job
+                </p>
+                <p class="easilyApply">
+                  <img src="icons/flash.png" />Responsive employer
+                </p>
+                <p class="easilyApply">
+                  <img src="icons/reloj.png" />Urgently hiring
+                </p>
+              </div>
+              <!-- END OF FACTS -->
+              <!-- JOB DESCRIPTION -->
+              <div class="jobDescription">
+                <ul>
+                  <li>
+                    Designs and Implements front-end web applications using
+                    modern JavaScript frameworks (React)
+                  </li>
+                  <li>
+                    FISPAN is an Enterprise SaaS FinTech start-up that allows
+                    for...
+                  </li>
+                </ul>
+              </div>
+              <!-- END OF JOB DESCRIPTION -->
+              <div class="visitedMinutes">
+                <p>Visited 15 days ago</p>
+              </div>
+            </div>
+            <!-- END OF 2nd SEARCH RESULT -->
+            <!-- 3RD SEARCH RESULT -->
+            <div
+              class="searchResult"
+              data-jobtitle="Back End Developer Co-Op (Fall Term 2022)"
+              data-company="Later"
+              data-joblocation="Vancouver, BC"
+              data-jobwage="$20 an hour"
+              data-jobdescription="
+              
+          <br>
+            What started as the result of a hackathon in 2014 is now the worlds #1 Instagram marketing platform. Later was built on the idea that social media management should be easy, quick, and affordable. Our mission is to help small businesses and entrepreneurs create and grow their businesses online. Six years and millions of users later, were still going strong.
+            Were looking for people who can help us build something great for our customers—from content writers, designers to developers. So if youre the kind of person who really cares about making something meaningful, then keep reading.
+          <br><br>
+          <b>Our Values</b>
+          <br>
+          Our core cultural values are manifested in our practices and processes every day. We highly value transparency and fairness in everything we do. We look for people who like to move quickly, are ambitious yet humble and have a great sense of humour. If you have a mischievous spark of fun, that’s even better.
+          <br> <br>
+          <b>What we’re looking for:</b>
+          <br>
+          Our applications are used by thousands of people every day, what you do will directly impact the user experience and interface. We are seeking a highly motivated Computer Science student to join us for a four month term as a Back End Developer. As a Back End Developer Coop you will be working with a mentor to:<br><br>
+          <ul>
+            <li>Develop and deliver reliable, scalable back end infrastructure to support front end applications;</li><br>
+            <li>Become acquainted with a software development workflow;</li><br>
+            <li>Hone your own programming skills and will learn how to contribute in a software development team.</li>
+          </ul>
+          <br><br>
+          
+          <b>Desired Skills and Requirements:</b>
+          <br>
+          <br>
+          <ul>
+            <li>Solid understanding of Github and Continuous Integration</li><br>
+            <li>Experience with JavaScript</li><br>
+            <li>Familiar with Ruby on Rails</li><br>
+            <li>Familiar with NodeJS</li><br>
+            <li>Familiar with AWS services
+            </li><br>
+            <li>Excellent communication skills and willingness to learn
+            </li><br>
+          </ul>
+           
+          <br> <br>
+          <p>An ideal candidate doesn’t just program for work, but also does it for fun. When applying, please be sure to include a link to your GitHub profile and to any projects you are particularly proud of.</p>
+          <br>"
+            >
+              <!-- HEADER -->
+              <div class="jobHeader">
+                <div>
+                  <span class="newJobPosition">new</span>
+                  <h2 class="jobTitle">
+                    Back End Developer Co-Op (Fall Term 2022)
+                  </h2>
+                  <p class="companyName">Later</p>
+                  <p class="jobLocation">Vancouver, BC</p>
+                </div>
+                <div>
+                  <a href="#"><img src="icons/dots.png" /></a>
+                </div>
+              </div>
+              <!-- END OF HEADER -->
+              <!-- HOURLY WAGE -->
+              <div class="jobWage"><p>$20 an hour</p></div>
+              <!-- JOB FACTS -->
+              <div class="jobFacts">
+                <p class="easilyApply">
+                  <img src="icons/send-button.png" />Easily apply to this job
+                </p>
+                <p class="easilyApply">
+                  <img src="icons/flash.png" />Responsive employer
+                </p>
+              </div>
+              <!-- END OF FACTS -->
+              <!-- JOB DESCRIPTION -->
+              <div class="jobDescription">
+                <ul>
+                  <li>
+                    Develop and deliver reliable, scalable
+                    <b>back end</b> infrastructure <br />
+                    to support <b>front end </b> applications.
+                  </li>
+                  <li>
+                    Become acquainted with a software development workflow..
+                  </li>
+                </ul>
+              </div>
+              <!-- END OF JOB DESCRIPTION -->
+              <div class="visitedMinutes">
+                <p>Visited 10 days ago</p>
+              </div>
+            </div>
+            <!-- END OF 3RD SEARCH RESULT -->
+            <!-- 4TH SEARCH RESULT -->
+            <div
+              class="searchResult"
+              data-jobtitle="Front End React/Redux Web Developer"
+              data-company="Goopter eCommerce Solution"
+              data-joblocation="Burnaby, BC"
+              data-jobwage="$38,000 - $50,000 a year"
+              data-jobdescription="
+              
+          
+             <br>
+             Goopter is looking for a passionate and collaborative personal to help us build the next generation web application system. You will work with the developer team to create complex web applications and support our cloud infrastructure.
+          <br><br>
+          Responsibilities include:
+          <br><br>
+          <ul>
+            <li>Serving as an frontend web application developer, and participate in web app development and a key contributor to our eCommerce Solutions;</li><br>
+            <li>Contributing to the functional design and architecture of customer-facing, high trafficked mobile applications- Confirm requirements, coding, testing, analysis, design, definition, development, and implementation of mobile application</li><br>
+            <li>Building complex web Applications using React/Redux, native and React Native technology; assist in technical support, bug fixing;</li><br>
+            <li>Ensure expectations are met and work within tight project management schedules in an Agile development environment.</li><br>
+          </ul>
+          <br> <br>
+          <b>Required Qualifications:</b>
+          <br><br>
+          <ul>
+            <li>Bachelor's Degree in Computer Science or related field;</li><br>
+            <li>Full-cycle development experience with web applications</li><br>
+            <li>1+ years of experience with React/Redux, Typescript; Hands-on experience in React/Redux development;</li><br>
+            <li>Proficient in fundamentals of object-oriented design, data structures, algorithm design, problem-solving, and complexity analysis;</li><br>
+            <li>Knowledge of web service technologies and services (specifically REST APIs);</li><br>
+            <li>Mobile app development experience with Swift/Kotlin is a plus, with no hesitation to jump in and learn a new platform if required;</li><br>
+            <li>Excellent oral and written communication skills including the ability to communicate technical issues to a non-technical person;</li><br>
+            <li>Experience in web technologies is a plus: PHP, Sprint framework, Elastic search, React, Redux, JavaScript, HTML, CSS, HTTP, Nginx, HTML5, and familiarity with Unix/Linux- UI Design experience for mobile or the web;</li><br>
+          </ul>
+          <br><br>
+          <p>To apply for the position, please email your resume and cover letter, we thank all interested applicants; however, only shortlisted candidates will be contacted.</p> <br><br>
+          <p>Job Types: Full-time, Permanent, Fixed term contract, Internship / Co-op
+Contract length: 6 months<br><br>
+Salary: $38,000.00-$50,000.00 per year<br><br>
+Schedule <br><br>
+<ul>
+  <li>8 hour shift </li>
+</ul>
+<br><br></p>
+<p>Ability to commuterelocate:</p>
+<br>
+<ul>
+  <li>Burnaby, BC: reliably commute or plan to relocate before starting work (preferred)</li>
+</ul>
+<br><br>
+"
+            >
+              <!-- HEADER -->
+              <div class="jobHeader">
+                <div>
+                  <span class="newJobPosition">new</span>
+                  <h2 class="jobTitle">Front End React/Redux Web Developer</h2>
+                  <p class="companyName">Goopter eCommerce Solution</p>
+                  <p class="jobLocation">Burnaby, BC</p>
+                </div>
+                <div>
+                  <a href="#"><img src="icons/dots.png" /></a>
+                </div>
+              </div>
+              <!-- END OF HEADER -->
+              <!-- HOURLY WAGE -->
+              <div class="jobWage"><p>$38,000 - $50,000 a year</p></div>
+              <!-- JOB FACTS -->
+              <div class="jobFacts">
+                <p class="easilyApply">
+                  <img src="icons/send-button.png" />Easily apply to this job
+                </p>
+                <p class="easilyApply">
+                  <img src="icons/flash.png" />Responsive employer
+                </p>
+                <p class="easilyApply">
+                  <img src="icons/reloj.png" />Urgently hiring
+                </p>
+              </div>
+              <!-- END OF FACTS -->
+              <!-- JOB DESCRIPTION -->
+              <div class="jobDescription">
+                <ul>
+                  <li>
+                    Serving as an frontend web application <b>developer</b>, and
+                    participate in web app development and a key contributor to
+                    our eCommerce Solutions;
+                  </li>
+                </ul>
+              </div>
+              <!-- END OF JOB DESCRIPTION -->
+              <div class="visitedMinutes">
+                <p>Visited 19 days ago</p>
+              </div>
+            </div>
+            <!-- END OF 4TH SEARCH RESULT -->
+          </div>
+          <div class="separator"></div>
+          <!-- RELATED SEARCHES -->
+          <article class="relatedSearches">
+            <button type="button">
+              <img src="icons/search-grey.png" />front end developer
+            </button>
+            <button type="button">
+              <img src="icons/search-grey.png" />web developer
+            </button>
+            <button type="button">
+              <img src="icons/search-grey.png" />web developer intern
+            </button>
+            <button type="button">
+              <img src="icons/search-grey.png" />junior web developer
+            </button>
+            <button type="button">
+              <img src="icons/search-grey.png" />developer intern
+            </button>
+            <button type="button">
+              <img src="icons/search-grey.png" />front end
+            </button>
+            <button type="button">
+              <img src="icons/search-grey.png" />junior front end developer
+            </button>
+            <button type="button">
+              <img src="icons/search-grey.png" />software developer intern
+            </button>
+            <button type="button">
+              <img src="icons/search-grey.png" />co op front end
+            </button>
+            <button type="button">
+              <img src="icons/search-grey.png" />web developer front end
+            </button>
+          </article>
+        </div>
+        <!-- MAIN RIGHT SIDE SHOWING JOB  -------------------->
+        <div id="rightSide">
+          <!-- HEADER OF SELECTED JOB  -->
+          <div class="selectedJobHeader">
+            <div class="selectedJobTitle">
+              <h1>JOB</h1>
+              <h2>COMPANY</h2>
+              <p>Job wage</p>
+              <p>Job Location</p>
+            </div>
+            <div class="applyNowBtns">
+              <button type="button">Apply now</button>
+              <button type="button"><img src="icons/heart.png" /></button>
+            </div>
+          </div>
+          <!-- SELECTED JOB DESCRIPTION -->
+          <div class="selectedJobDescription">
+            <p>THIS IS A TEST</p>
+          </div>
+          <!-- COMPANY + REPORT JOB OPTION -->
+          <div class="selectedReportJob">
+            <p class="companySelected">COMPANY</p>
+            <button type="button">
+              <img src="icons/report.png" />Report job
+            </button>
+          </div>
+        </div>
+        <!-- END OF RIGHT SIDE -->
+      </section>
+    </main>
+    <!-- FOOTER -->
+    <div class="lastSeparator"></div>
+    <footer>
+      <div>
+        <a href="#">Hiring Lab</a>
+        <a href="#">Career Advice</a>
+        <a href="#">Browse Jobs</a>
+        <a href="#">Browse Companies</a>
+        <a href="#">Salaries</a>
+        <a href="#">Indeed Events</a>
+        <a href="#">Work at Indeed</a>
+        <a href="#">Countries</a>
+        <a href="#">About</a>
+        <a href="#">Help Centre</a>
+      </div>
+      <div>
+        <a href="#">2022 Indeed</a>
+        <a href="#">Accesibility at Indeed</a>
+        <a href="#">Privacy Centre</a>
+        <a href="#">Cookies</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </footer>
+    <!-- FIXES MESSAGES BLUE BAR -->
+    <div id="messagesBar">
+      <div class="messagesHeader">
+        <img src="icons/chat-white.png" />
+        <p>Messages</p>
+      </div>
+      <div class="messagesContent">
+        <div class="newMessage">
+          <img src="icons/messagesImg.png" />
+          <div class="message">
+            <p>Employer</p>
+            <p>Interview at lugaro - ...</p>
+          </div>
+          <span>May 06</span>
+        </div>
+        <div class="newMessage">
+          <img src="icons/messagesImg.png" />
+          <div class="message">
+            <p>Employer</p>
+            <p>Your Summer 2022 ...</p>
+          </div>
+          <span>Apr 25</span>
+        </div>
+        <div class="newMessage">
+          <img src="icons/messagesImg.png" />
+          <div class="message">
+            <p>Employer</p>
+            <p>Your Summer 2022 ...</p>
+          </div>
+          <span>Apr 25</span>
+        </div>
+        <div class="newMessage">
+          <img src="icons/messagesImg.png" />
+          <div class="message">
+            <p>Employer</p>
+            <p>Your Summer 2022 ...</p>
+          </div>
+          <span>Apr 13</span>
+        </div>
+        <div class="newMessage">
+          <img src="icons/messagesImg.png" />
+          <div class="message">
+            <p>Mosaic Sales</p>
+            <p>Jonathan sent you a ...</p>
+          </div>
+          <span>April 12</span>
+        </div>
+        <div class="newMessage">
+          <img src="icons/messagesImg.png" />
+          <div class="message">
+            <p>Scanline VFX</p>
+            <p>Front End Developer...</p>
+          </div>
+          <span>Mar 22</span>
+        </div>
+        <div class="newMessage">
+          <img src="icons/messagesImg.png" />
+          <div class="message">
+            <p>Venture Creative</p>
+            <p>Web Developer - Nic...</p>
+          </div>
+          <span>Mar 04</span>
+        </div>
+        <div class="newMessage">
+          <img src="icons/messagesImg.png" />
+          <div class="message">
+            <p>Enterprise Rent</p>
+            <p>Freda Moore sent you...</p>
+          </div>
+          <span>Mar 02</span>
+        </div>
+        <button type="button">See all in Messages</button>
+      </div>
+    </div>
+    <!-- RESPONSIVE BURGER MENU -->
+    <div class="responsiveMenu">
+      <div class="linksResponsiveMenu">
+        <img src="icons/x.png" class="closeResponsiveMenu" />
+        <a href="#">Find Jobs<img src="icons/right-arrow.png" /></a>
+        <a href="#">Company reviews<img src="icons/right-arrow.png" /></a>
+        <a href="#">Salary guide<img src="icons/right-arrow.png" /></a>
+        <a href="#">Employers<img src="icons/right-arrow.png" /></a>
+        <a href="#">Profile<img src="icons/right-arrow.png" /></a>
+        <a href="#">My jobs<img src="icons/right-arrow.png" /></a>
+        <a href="#">My reviews<img src="icons/right-arrow.png" /></a>
+        <a href="#">Email settings<img src="icons/right-arrow.png" /></a>
+        <a href="#">Settings<img src="icons/right-arrow.png" /></a>
+
+        <a href="#">Help Centre<img src="icons/right-arrow.png" /></a>
+        <a href="#">Sign out <img src="icons/right-arrow.png" /></a>
+      </div>
+    </div>
+    <!-- MAIN JS FILE -->
+    <script src="app.js"></script>
+  </body>
+</html>
